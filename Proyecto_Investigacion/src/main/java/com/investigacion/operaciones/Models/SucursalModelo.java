@@ -5,6 +5,7 @@
  */
 package com.investigacion.operaciones.Models;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,22 +36,59 @@ public class SucursalModelo implements java.io.Serializable {
 
     @Column(name = "ubicacion_sucursal", length = 64)
     private String ubicacion_sucursal;
+    
+    @Column(name = "usuario_creacion", length = 15)
+    private String usuario_creacion;
+
+    @Column(name = "fecha_creacion")
+    private Date fecha_creacion;
+
+    @Column(name = "fecha_modificacion")
+    private Date fecha_modificacion;
 
     /*
     @OneToMany(mappedBy = "Usuario")
     private List<UsuarioModelo> usuarios;
     
      */
+
     public SucursalModelo() {
     }
 
-    public SucursalModelo(Integer id_sucursal, String direccion_sucursal, String nombre_sucursal, String ubicacion_sucursal) {
+    public SucursalModelo(Integer id_sucursal, String direccion_sucursal, String nombre_sucursal, String ubicacion_sucursal, String usuario_creacion, Date fecha_creacion, Date fecha_modificacion) {
         this.id_sucursal = id_sucursal;
         this.direccion_sucursal = direccion_sucursal;
         this.nombre_sucursal = nombre_sucursal;
         this.ubicacion_sucursal = ubicacion_sucursal;
-
+        this.usuario_creacion = usuario_creacion;
+        this.fecha_creacion = fecha_creacion;
+        this.fecha_modificacion = fecha_modificacion;
     }
+
+    public String getUsuario_creacion() {
+        return usuario_creacion;
+    }
+
+    public void setUsuario_creacion(String usuario_creacion) {
+        this.usuario_creacion = usuario_creacion;
+    }
+
+    public Date getFecha_creacion() {
+        return fecha_creacion;
+    }
+
+    public void setFecha_creacion(Date fecha_creacion) {
+        this.fecha_creacion = fecha_creacion;
+    }
+
+    public Date getFecha_modificacion() {
+        return fecha_modificacion;
+    }
+
+    public void setFecha_modificacion(Date fecha_modificacion) {
+        this.fecha_modificacion = fecha_modificacion;
+    }
+  
 
     public Integer getId_sucursal() {
         return id_sucursal;

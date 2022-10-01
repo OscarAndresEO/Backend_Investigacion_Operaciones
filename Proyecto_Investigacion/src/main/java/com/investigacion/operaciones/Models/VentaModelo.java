@@ -26,7 +26,7 @@ public class VentaModelo {
     private Integer id_venta;
     private Date fecha_venta;
     private Integer total_venta;
-    private Integer id_usuario;
+    private String usuario_creacion;
     private String nit_persona;
 
     public Integer getId_venta() {
@@ -53,13 +53,14 @@ public class VentaModelo {
         this.total_venta = total_venta;
     }
 
-    public Integer getId_usuario() {
-        return id_usuario;
+    public String getUsuario_creacion() {
+        return usuario_creacion;
     }
 
-    public void setId_usuario(Integer id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setUsuario_creacion(String usuario_creacion) {
+        this.usuario_creacion = usuario_creacion;
     }
+
 
     public String getNit_persona() {
         return nit_persona;
@@ -72,12 +73,14 @@ public class VentaModelo {
     public VentaModelo() {
     }
 
-    public VentaModelo(Integer id_venta, Date fecha_venta, Integer total_venta, Integer id_usuario, String nit_persona) {
+    public VentaModelo(Integer id_venta, Date fecha_venta, Integer total_venta, String usuario_creacion, String nit_persona) {
         this.id_venta = id_venta;
         this.fecha_venta = fecha_venta;
         this.total_venta = total_venta;
-        this.id_usuario = id_usuario;
+        this.usuario_creacion = usuario_creacion;
         this.nit_persona = nit_persona;
     }
+
+  
 
 }

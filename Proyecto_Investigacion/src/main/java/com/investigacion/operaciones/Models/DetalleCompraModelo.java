@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
  * @author oscar
  */
 @Entity
-@Table(name = "compra",
+@Table(name = "detalle_compra",
         schema = "public")
 @Data
 @AllArgsConstructor
@@ -29,7 +29,6 @@ public class DetalleCompraModelo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_detalle;
-
     private Integer id_Compra;
     private Integer id_producto;
     private Integer cantidad;

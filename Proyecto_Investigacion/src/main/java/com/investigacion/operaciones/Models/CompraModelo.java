@@ -33,4 +33,5 @@ public class CompraModelo implements java.io.Serializable {
     private Integer id_persona;
     private Date fecha_compra;
     private Integer total_compra;
+    private String usuario_creacion;
 }

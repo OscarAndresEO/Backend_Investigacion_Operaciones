@@ -34,6 +34,7 @@ public class UsuarioModelo implements java.io.Serializable {
     private String username;
     private String clave;
     private String rol;
+    private String usuario_creacion;
     private Date fecha_creacion;
     private Date fecha_modificacion;
 
@@ -157,10 +158,19 @@ public class UsuarioModelo implements java.io.Serializable {
         this.fecha_modificacion = fecha_modificacion;
     }
 
+    @Column(name = "usuario_creacion")
+    public String getUsuario_creacion() {
+        return usuario_creacion;
+    }
+
+    public void setUsuario_creacion(String usuario_creacion) {
+        this.usuario_creacion = usuario_creacion;
+    }
+
     public UsuarioModelo() {
     }
 
-    public UsuarioModelo(Integer id_usuario, Integer id_sucursal, String nombre, String direccion, String email, String cui, Integer celular, Integer telefono_fijo, String username, String clave, String rol, Date fecha_creacion, Date fecha_modificacion) {
+    public UsuarioModelo(Integer id_usuario, Integer id_sucursal, String nombre, String direccion, String email, String cui, Integer celular, Integer telefono_fijo, String username, String clave, String rol, String usuario_creacion, Date fecha_creacion, Date fecha_modificacion) {
         this.id_usuario = id_usuario;
         this.id_sucursal = id_sucursal;
         this.nombre = nombre;
@@ -172,8 +182,11 @@ public class UsuarioModelo implements java.io.Serializable {
         this.username = username;
         this.clave = clave;
         this.rol = rol;
+        this.usuario_creacion = usuario_creacion;
         this.fecha_creacion = fecha_creacion;
         this.fecha_modificacion = fecha_modificacion;
     }
 
+
+    
 }

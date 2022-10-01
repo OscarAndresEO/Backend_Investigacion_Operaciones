@@ -6,14 +6,10 @@
 package com.investigacion.operaciones.controllers;
 
 import com.investigacion.operaciones.Models.SucursalModelo;
-import com.investigacion.operaciones.Models.UsuarioModelo;
 import com.investigacion.operaciones.Services.SucursalServices;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -68,24 +64,9 @@ public class SucursalController {
     @PostMapping(value = "/crearSucursal")
     @ApiOperation(value = "Crea una nueva sucursal")
     public ResponseEntity<?> crearSucursal(@RequestBody SucursalModelo sucursal, BindingResult result) {
-        if (result.hasErrors()) {
-            return this.validar(result);
-        }
-        Boolean existeSucursal = existeSucursal(sucursal.getId_sucursal()).getBody();
-        if (existeSucursal) {
-            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body("La sucursal ya existe");
-        } else {
+             
             return ResponseEntity.ok(sucursalServices.crearSucursal(sucursal));
-        }
     }
 
-    public ResponseEntity<?> validar(BindingResult result) {
-        Map<String, Object> errores = new HashMap<>();
-        result.getFieldErrors().forEach(err -> {
-            errores.put(err.getField(), err.getDefaultMessage());
-        });
-
-        return ResponseEntity.badRequest().body(errores);
-    }
-
+  
 }

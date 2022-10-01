@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
  * @author oscar
  */
 @Entity
-@Table(name = "Marca",
+@Table(name = "marca",
         schema = "public")
 @Data
 @AllArgsConstructor
@@ -33,4 +33,5 @@ public class MarcaModelo implements java.io.Serializable {
     private String descripcion;
     private Date fecha_creacion;
     private Date fecha_modificacion;
+    private String usuario_creacion;
 }

@@ -82,7 +82,7 @@ public class VentasController {
         if (result.hasErrors()) {
             return this.validar(result);
         }
-        Boolean existeVenta = existeVenta(venta.getId_usuario()).getBody();
+        Boolean existeVenta = existeVenta(venta.getId_venta()).getBody();
         if (existeVenta) {
             return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body("Venta ya existe");
         } else {

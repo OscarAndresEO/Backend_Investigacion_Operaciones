@@ -32,7 +32,7 @@ public class PersonaModelo implements java.io.Serializable {
     private String pagina_web;
     private Date fecha_creacion;
     private Date fecha_modificacion;
-    private String usuario;
+    private String usuario_creacion;
 
     @Id
     @Column(name = "id_persona", nullable = false)
@@ -126,19 +126,19 @@ public class PersonaModelo implements java.io.Serializable {
         this.fecha_modificacion = fecha_modificacion;
     }
 
-    @Column(name = "usuario", nullable = false)
+    @Column(name = "usuario_creacion", nullable = false)
     public String getUsuario() {
-        return usuario;
+        return usuario_creacion;
     }
 
     public void setUsuario(String usuario) {
-        this.usuario = usuario;
+        this.usuario_creacion = usuario;
     }
 
     public PersonaModelo() {
     }
 
-    public PersonaModelo(Integer id_persona, String tipo_persona, String nombre, String nit, String direccion, Integer celular, Integer telefono_fijo, String pagina_web, Date fecha_creacion, Date fecha_modificacion, String usuario) {
+    public PersonaModelo(Integer id_persona, String tipo_persona, String nombre, String nit, String direccion, Integer celular, Integer telefono_fijo, String pagina_web, Date fecha_creacion, Date fecha_modificacion, String usuario_creacion) {
         this.id_persona = id_persona;
         this.tipo_persona = tipo_persona;
         this.nombre = nombre;
@@ -149,7 +149,7 @@ public class PersonaModelo implements java.io.Serializable {
         this.pagina_web = pagina_web;
         this.fecha_creacion = fecha_creacion;
         this.fecha_modificacion = fecha_modificacion;
-        this.usuario = usuario;
+        this.usuario_creacion = usuario_creacion;
     }
 
 }
